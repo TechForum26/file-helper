@@ -7,7 +7,8 @@ echo "1) List all files"
 echo "2) Count lines in a file"
 echo "3) Show file sizes"
 echo "4) Search for a word in a file"
-echo "5) Exit"
+echo "5) Delete a file"
+echo "6) Exit"
 
 read choice
 
@@ -33,6 +34,12 @@ case $choice in
         grep "$word" "$fname"   # search for word in file
         ;;
     5)
+        echo "Enter filename:"
+	read fname
+	echo "Deleting the file..."
+	rm -rf "$fname"
+	;;
+    6)
         echo "Goodbye!"
         exit 0
         ;;
